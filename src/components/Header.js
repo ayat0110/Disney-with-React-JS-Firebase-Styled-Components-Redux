@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { auth, provider } from "../firebase"
+import { auth, provider } from "./firebase"
 
 
 const Header = (props) => {
@@ -43,7 +43,7 @@ const Header = (props) => {
                             <span>SERIES</span>
                         </a>
                     </NavMenu>
-          <Login >Login</Login>
+          <Login onClick={handleAuth}>Login</Login>
         </Nav>
     );
 };
