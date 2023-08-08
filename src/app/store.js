@@ -1,5 +1,5 @@
 import { configureStore  } from "@reduxjs/toolkit";
-import loggerMiddleware from './middleware/logger'
+import logger from 'redux-logger';
 import userReducer from "../features/user/userSlice";
 import movieReducer from "../features/movie/movieSlice";
 
@@ -8,7 +8,5 @@ export default configureStore({
         user: userReducer,
         movie: movieReducer,
     },
-    middleware: loggerMiddleware({
-        serializableCheck: false,
-    }),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
