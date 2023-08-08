@@ -25,6 +25,16 @@ const Header = (props) => {
             alert(error.message);
         });
     }
+    
+  const setUser = (user) => {
+    dispatch(
+      setUserLoginDetails({
+        name: user.displayName,
+        email: user.email,
+        photo: user.photoURL,
+      })
+    );
+  };
 
   return (
         <Nav>
