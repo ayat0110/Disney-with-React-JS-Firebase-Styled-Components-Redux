@@ -72,6 +72,7 @@ const Header = (props) => {
               <span>SERIES</span>
             </a>
           </NavMenu>
+            <UserImg src={userPhoto} alt={userName} />
         </>
       )}
     </Nav>
