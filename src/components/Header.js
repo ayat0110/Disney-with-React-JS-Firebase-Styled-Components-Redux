@@ -25,7 +25,7 @@ const Header = (props) => {
             alert(error.message);
         });
     }
-    
+
   const setUser = (user) => {
     dispatch(
       setUserLoginDetails({
@@ -41,6 +41,10 @@ const Header = (props) => {
             <Logo>
                 <img src="/images/logo.svg" alt="Disney+" />
             </Logo>
+      {!userName ? (
+        <Login onClick={handleAuth}>Login</Login>
+     ) : (
+        <>
             <NavMenu>
                         <a href="/home">
                             <img src="/images/home-icon.svg" alt="HOME" />
