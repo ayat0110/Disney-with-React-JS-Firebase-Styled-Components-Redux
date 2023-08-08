@@ -1,13 +1,15 @@
+import { useEffect } from "react";
 import styled from "styled-components";
-import { auth, provider } from "./firebase"
-import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { auth, provider } from "../firebase";
 import {
   selectUserName,
   selectUserPhoto,
   setUserLoginDetails,
   setSignOutState,
 } from "../features/user/userSlice";
+
 
 
 const Header = (props) => {
@@ -18,7 +20,7 @@ const Header = (props) => {
 
     const handleAuth = () => {
         auth.signInWithPopup(provider).then((result) => {
-            console.log(result)
+          setUser(result.user);
         }).catch((error) => {
             alert(error.message);
         });
