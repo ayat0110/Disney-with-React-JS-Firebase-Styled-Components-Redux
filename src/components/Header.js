@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { auth, provider } from "./firebase"
+import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectUserName,
